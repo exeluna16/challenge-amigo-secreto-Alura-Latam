@@ -1,6 +1,5 @@
 let listaAmigos = [];
 
-
 function agregarAmigo(){
     let nombreAmigo = document.querySelector('#amigo').value;
     
@@ -9,9 +8,20 @@ function agregarAmigo(){
     }else{
         
         listaAmigos.push(nombreAmigo);
-        //alert(listaAmigos);
         document.querySelector('#amigo').value = '';
-        
+        mostrarAmigo();
     }
     
+}
+
+function mostrarAmigo(){
+    let lista = document.querySelector('#listaAmigos');
+    lista.innerHTML =  '';
+    
+    for (let indice = 0; indice < listaAmigos.length; indice++) {
+        const nombreDeAmigo = listaAmigos[indice];
+        const elementoLista = document.createElement('li');
+        elementoLista.innerText = nombreDeAmigo;
+        lista.appendChild(elementoLista);
+    }
 }
