@@ -32,7 +32,7 @@ function existenAmigos(){
     return listaAmigos.length > 0;
 }
 
-function mostarAmigoElegido(amigo){
+function mostrarAmigoElegido(amigo){
     document.querySelector('#resultado').innerText = amigo;
 }
 
@@ -57,7 +57,7 @@ function amigoExistente(amigo){
 function sortearAmigo(){
     if(existenAmigos()){
         let indiceAmigoElegido = Math.floor(Math.random() * listaAmigos.length);
-        mostarAmigoElegido(listaAmigos[indiceAmigoElegido]);
+        mostrarAmigoElegido(listaAmigos[indiceAmigoElegido]);
         limpiarLista();
         limpiarCampoNombreAmigo();
     }else{
